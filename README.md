@@ -2,7 +2,7 @@
 Bitcoin Dapps Improvement Proposals (BDIPs) describe standards for the Bitcoin decentralized applications.
 
 # Contributing
- 1. Review [BDIP-1](BDIPs/BDIP-1.md).
+ 1. Review [BDIP-1](BDIPs/bdip-1.md).
  2. Fork the repository by clicking "Fork" in the top right.
  3. Add your BDIP to your fork of the repository.
  4. Submit a Pull Request to web3bch's [BDIPs repository](https://github.com/web3bch/BDIPs).
