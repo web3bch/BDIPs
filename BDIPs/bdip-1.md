@@ -1,5 +1,3 @@
-# BDIP-1
-
 ---
 bdip: 1
 title: BDIP Purpose and Guidelines
