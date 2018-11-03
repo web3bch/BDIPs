@@ -1,24 +1,46 @@
 ---
 bdip: 2
 title: DApp ID
-author: Shun Usami\<usatie@yenom.tech>,
-        Taiki Uchida\<yuiki@yenom.tech>,
-        Akifumi Fujita\<akifuji@yenom.tech>
+author: Shun Usami <usatie@yenom.tech>,
+        Taiki Uchida <yuiki@yenom.tech>,
+        Akifumi Fujita <akifuji@yenom.tech>
 type: Standard Track
 status: Draft
 Created: 2018-11-1
 ---
 
+Table of Contents
+=================
+
+      * [Simple Summary](#simple-summary)
+      * [Abstract](#abstract)
+      * [Motivation](#motivation)
+      * [Specification](#specification)
+         * [Data in the OP_RETURN output](#data-in-the-op_return-output)
+         * [Transaction Field Definitions](#transaction-field-definitions)
+            * [Field: Magic bytes](#field-magic-bytes)
+            * [Field: Transaction type](#field-transaction-type)
+            * [Field: Transaction version](#field-transaction-version)
+            * [Field: Bitcoin File URI](#field-bitcoin-file-uri)
+            * [Field: Application type](#field-application-type)
+            * [Field: String](#field-string)
+         * [Transaction Definitions](#transaction-definitions)
+            * [Create DApp](#create-dapp)
+         * [Updating DApps](#updating-dapps)
+      * [Rationale](#rationale)
+      * [References](#references)
+      * [Copyright](#copyright)
+
 ## Simple Summary
- A unique identifier for a single DApp Protocol with the specification of the DApp. 
+ A unique identifier for a single DApp Protocol with the specification of the DApp.
 
 ## Abstract
 Anyone can craete DApp ID by simply broadcasting a transaction. The transaction must have OP_RETURN output, which contains the summary of the DApp's protocol spec. The txid of this transaction is regarded as the DApp ID.
 
 ## Motivation
-Currently, private key providers (i.e. wallets) does not have a way to trustlessly get a DApps protocol spec such as, 
-- If the DApp requires to use an single address. (i.e. Wormhole wallet)
-- If the DApp requires to keep utxos. (i.e. SLP wallet)
+Currently, private key providers (i.e. wallets) does not have a way to trustlessly get a DApps protocol spec such as,
+- If the DApp requires to use an single address. (i.e. Wormhole token application)
+- If the DApp requires to keep utxos. (i.e. SLP token application)
 
 The protocol spec of DApps is the core part of DApps, but we don't have the standard way to share it.
 The motivation of DApp ID is to accomplish it in a trustless manner.
@@ -29,7 +51,7 @@ The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL 
 
 ### Data in the OP_RETURN output
 The script of the output consists of OP_RETURN and a sequence of OP_PUSHDATA with data.
-If the data is NULL, use `OP_0` instead of OP_PUSHDATA with data. 
+If the data is NULL, use `OP_0` instead of OP_PUSHDATA with data.
 
 Example.
 ```
@@ -53,7 +75,6 @@ This section defines the fields that are used to construct transaction messages.
 #### Field: Magic bytes
 - Description: the magic bytes for DApp ID protocol.
 - Size: `4 bytes`, binary data
-- Required/optional: Required
 - Valid value: `0x64617070`
 
 #### Field: Transaction type
@@ -65,7 +86,6 @@ This section defines the fields that are used to construct transaction messages.
 #### Field: Transaction version
 - Description: The version of the transaction - definition, monotonically increasing independently for each transaction type
 - Size: `2 bytes`, 16-bit unsigned integer
-- Required/optional: Required
 - Inter-dependencies: [Transaction type](#field-transaction-type)
 - Valid values: 0 to 65535
 
@@ -112,14 +132,14 @@ Each transaction definition has its own version number to enable support for cha
 | Transaction version | [Transaction version](#Field-Transaction-version) | 0 (0x0000) |
 | Application type | [Application type](#Field-Application-type) | 0 (0x00) |
 | Name | [String](#Field-String) | "BitcoinCashApp" (14 bytes) |
-| Protocol Spec file URI | [Bitcoinfile URI](#Field-Bitcoinfile-URI) / NULL | 0eac357541b0ba572849113c5faa1d1990f6382741dc3e2f5507e3ca8346dc0e |
+| Protocol Spec file URI | [Bitcoinfile URI](#Field-Bitcoin-file-URI) / NULL | 0eac357541b0ba572849113c5faa1d1990f6382741dc3e2f5507e3ca8346dc0e |
 | URL | [String](#Field-String) / NULL | "web3bch.cash" (12 bytes) |
 | Meta Data | [String](#Field-String) / NULL | "Hello Bitcoin Cash" (18 bytes) |
 
 
 ### Updating DApps
-Updating DApps protocol is regarded as creating new DApps. So the transaction format is the same as [Create DApp](#Create-DApp). 
-If you want to prove the update is the cannonical one, it seems a good way to use the change utxo of the previous DApp creating tx. 
+Updating DApps protocol is regarded as creating new DApps. So the transaction format is the same as [Create DApp](#Create-DApp).
+If you want to prove the update is the cannonical one, it seems a good way to use the change utxo of the previous DApp creating tx.
 
 However, it should be emphasized that DApps are protocols so if DApp ID changes, it's not the same protocol anymore.
 It means that anyone can fork and update any DApps at anytime by simply creating the new DApp ID.
