@@ -28,7 +28,7 @@ Table of Contents
  A unique identifier for a single DApp Protocol with the specification of the DApp.
 
 ## Abstract
-Anyone can craete DApp ID by simply broadcasting a transaction. The transaction must have OP_RETURN output, which contains the summary of the DApp's protocol spec. The txid of this transaction is regarded as the DApp ID.
+Anyone can create a DApp ID by simply broadcasting a transaction. The transaction must have an `OP_RETURN` output, which contains the summary of the DApp's protocol spec. The txid of this transaction is regarded as the DApp ID.
 
 ## Motivation
 Currently, private key providers (i.e. wallets) does not have a way to trustlessly get a DApps protocol spec such as,
@@ -42,9 +42,9 @@ The motivation of DApp ID is to accomplish it in a trustless manner.
 ## Specification
 The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be interpreted as described in RFC 2119.
 
-### Data in the OP_RETURN output
-The script of the output consists of OP_RETURN and a sequence of OP_PUSHDATA with data.
-If the data is NULL, use `OP_0` instead of OP_PUSHDATA with data.
+### Data in the `OP_RETURN` output
+The script of the output consists of `OP_RETURN` and a sequence of `OP_PUSHDATA` with data.
+If the data is NULL, use `OP_0` instead of `OP_PUSHDATA` with data.
 
 Example.
 ```
