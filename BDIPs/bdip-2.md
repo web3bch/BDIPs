@@ -42,9 +42,9 @@ The motivation of DApp ID is to accomplish it in a trustless manner.
 ## Specification
 The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be interpreted as described in RFC 2119.
 
-### Data in the OP_RETURN output
-The script of the output consists of OP_RETURN and a sequence of OP_PUSHDATA with data.
-If the data is NULL, use `OP_0` instead of OP_PUSHDATA with data.
+### Data in the `OP_RETURN` output
+The script of the output consists of `OP_RETURN` and a sequence of `OP_PUSHDATA` with data.
+If the data is NULL, use `OP_0` instead of `OP_PUSHDATA` with data.
 
 Example.
 ```
