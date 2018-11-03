@@ -28,7 +28,7 @@ Table of Contents
  A unique identifier for a single DApp Protocol with the specification of the DApp.
 
 ## Abstract
-Anyone can craete DApp ID by simply broadcasting a transaction. The transaction must have OP_RETURN output, which contains the summary of the DApp's protocol spec. The txid of this transaction is regarded as the DApp ID.
+Anyone can create DApp ID by simply broadcasting a transaction. The transaction must have OP_RETURN output, which contains the summary of the DApp's protocol spec. The txid of this transaction is regarded as the DApp ID.
 
 ## Motivation
 Currently, private key providers (i.e. wallets) does not have a way to trustlessly get a DApps protocol spec such as,

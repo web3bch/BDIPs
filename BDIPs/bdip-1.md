@@ -117,7 +117,7 @@ if the email address is not given.
 
 
 ### Discussions-to header
-While a BDIP is a draft, a discussions-to header will indicate the mailing list or URL where the BDIP is being discussed. As mentioned above, examples for places to discuss your BDIP including an issue in this repo or in a fork of this repo, and [Reddit r/bitcoin](https://www.reddit.com/r/bitcoin/). No discussions-to header is necessary if the BDIP is being discussed privately with the author.
+While a BDIP is a draft, a discussions-to header will indicate the mailing list or URL where the BDIP is being discussed. As mentioned above, examples for places to discuss your BDIP including an issue in this repo or in a fork of this repo, and [Reddit r/bitcoin](https://www.reddit.com/r/bitcoin/) or [Reddit r/btc](https://www.reddit.com/r/btc). No discussions-to header is necessary if the BDIP is being discussed privately with the author.
 
 ### Type header
 The type header specifies the type of BDIP: Standards Track, Meta, or Informational.
