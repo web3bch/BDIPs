@@ -9,27 +9,20 @@ status: Draft
 Created: 2018-11-1
 ---
 
-Table of Contents
 =================
 
-      * [Simple Summary](#simple-summary)
-      * [Abstract](#abstract)
-      * [Motivation](#motivation)
-      * [Specification](#specification)
-         * [Data in the OP_RETURN output](#data-in-the-op_return-output)
-         * [Transaction Field Definitions](#transaction-field-definitions)
-            * [Field: Magic bytes](#field-magic-bytes)
-            * [Field: Transaction type](#field-transaction-type)
-            * [Field: Transaction version](#field-transaction-version)
-            * [Field: Bitcoin File URI](#field-bitcoin-file-uri)
-            * [Field: Application type](#field-application-type)
-            * [Field: String](#field-string)
-         * [Transaction Definitions](#transaction-definitions)
-            * [Create DApp](#create-dapp)
-         * [Updating DApps](#updating-dapps)
-      * [Rationale](#rationale)
-      * [References](#references)
-      * [Copyright](#copyright)
+Table of Contents
+* [Simple Summary](#simple-summary)
+* [Abstract](#abstract)
+* [Motivation](#motivation)
+* [Specification](#specification)
+   * [Data in the OP_RETURN output](#data-in-the-op_return-output)
+   * [Transaction Field Definitions](#transaction-field-definitions)
+   * [Transaction Definitions](#transaction-definitions)
+   * [Updating DApps](#updating-dapps)
+* [Rationale](#rationale)
+* [References](#references)
+* [Copyright](#copyright)
 
 ## Simple Summary
  A unique identifier for a single DApp Protocol with the specification of the DApp.
